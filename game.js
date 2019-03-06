@@ -33,7 +33,7 @@ $('#start').click(() => {
     // help 
 
     coordonnee(image.x[0], image.y[0])
-
+    aud();
 
 })
 
