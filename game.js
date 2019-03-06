@@ -10,3 +10,5 @@ const images = [
 // start Button 
 
 coordonnee(275, 690);
+
+setInterval(introCanvas, 1000);

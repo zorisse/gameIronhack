@@ -3,7 +3,7 @@ function draw(distance) {
     const canvas = document.querySelector('#canvas')
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, 1200, 458);
-    console.log(distance)
+    // console.log(distance)
 
     //Je fait varier la couleur en fonction de distance, plus on est près plus on tant vers le rouge 
     ctx.fillStyle = `rgb(${255 - (distance - 30)},0,${0 + (distance - 30)})`

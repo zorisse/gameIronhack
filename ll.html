@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Ou est charlie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" type="text/css" media="screen" href="game.css">
 
 </head>
@@ -32,17 +34,20 @@
 
         </div>
         <div id="game">
-            <img id="image" src="./images/OTfytjA.jpg" alt="game">
+            <canvas id="introCanvas" width="800" height="400"></canvas>
+            <!-- <img id="image" src="./images/OTfytjA.jpg" alt="game"> -->
         </div>
     </div>
 
 
 
 
+    <script src="./lib/jquery/jquery-3.3.1.min.js"></script>
 
     <script src="./coordonnees.js"></script>
-    <script src="./game.js"></script>
 
+    <script src="./introCanva.js"></script>
+    <script src="./game.js"></script>
 </body>
 
 </html>
