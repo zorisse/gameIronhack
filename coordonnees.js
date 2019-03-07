@@ -11,6 +11,7 @@ function draw(distance) {
 
     ctx.fillRect(0, 0, distance, 10);
 
+
 }
 
 
@@ -24,7 +25,7 @@ function coordonnee(charlieX, charlieY) {
     document.addEventListener('mousemove', (e) => {
         var x = e.screenX;
         var y = e.screenY;
-        screenLog.innerText = `Screen X/Y: ${x}, ${y}`;
+        // screenLog.innerText = `Screen X/Y: ${x}, ${y}`;
 
         // Calcul de la distance separant Charli de la souris
 

@@ -15,21 +15,21 @@
 <body>
     <div id='container'>
         <div id="title">
-            <div id='xy'>
-                <p id='coord'></p>
-
-
-                <!-- <button id='start'>START GAME</button> -->
-            </div>
             <div id='chrono'>
-                <P>LAPIN</P>
+                <span id="minDec" class="number">0</span>
+                <span id="minUni" class="number">0</span><span class="number">:</span>
+                <span id="secDec" class="number">0</span>
+                <span id="secUni" class="number">0</span>
+            </div>
+            <div id='waldoDistance'>
+                <P>Distance to Waldo</P>
                 <canvas id='canvas'></canvas>
             </div>
 
+            <!-- 
+            <audio id='audio' src="">
 
-            <audio id='audio' src="./sound/chrono.mp3">
-
-            </audio>
+            </audio> -->
 
 
         </div>
@@ -48,6 +48,11 @@
     <script src="./audio.js"></script>
     <script src="./coordonnees.js"></script>
     <script src="./introCanva.js"></script>
+    <script src="./chrono.js"></script>
+    <script src="./chronomain.js"></script>
+
+
+
     <script src="./game.js"></script>
 </body>
 

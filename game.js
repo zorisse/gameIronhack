@@ -1,6 +1,7 @@
 // game
 
 // DATA
+// images 
 const images = [
     { src: './images/OTfytjA.jpg', x: [275, 287], y: [690, 710] },
     { src: './images/fort.jpg', x: [245, 255], y: [745, 755] },
@@ -8,6 +9,12 @@ const images = [
     { src: '', x: [275, 287], y: [670, 700] },
 
 ]
+
+// get money and time 
+let player = {
+    name: 'one ', time: 0, money: 30, gameover: false
+}
+
 
 // intro
 $('#start').hide();
@@ -33,8 +40,9 @@ $('#start').click(() => {
     // help 
 
     coordonnee(image.x[0], image.y[0])
-    aud();
+
 
 })
 
 
+setStartBtn()
