@@ -2,11 +2,13 @@
 //
 
 const imageIntro = [
-    { name: 'bouqin', src: './images/intro/bouquin.jpg' },
-    { name: 'droite', src: './images/intro/droiteDroite.jpg' },
-    { name: 'gauche', src: './images/intro/gaucheCanne.jpg' },
-    { name: 'salut', src: './images/intro/salut.jpeg' },
-    { name: 'where is waldo', src: 'images/intro/whereiswaldo.png' },
+    { name: 'bouqin', src: './images/intro/1.png' },
+    { name: 'droite', src: './images/intro/2.png' },
+    { name: 'gauche', src: './images/intro/3.png' },
+    { name: 'salut', src: './images/intro/4.png' },
+    { name: 'where is waldo', src: './images/intro/whereiswaldo.png' },
+    { name: 'gameOver', src: './images/intro/png/gameOver.png' },
+    { name: 'gameOver', src: './images/intro/png/boom.png' },
 ]
 
 
@@ -52,17 +54,15 @@ function finaleIntroCanva() {
 }
 
 
+function gameOverCanva() {
+    clearCanvas();
+    let img = new Image();
+    img.src = imageIntro[5].src
+    img.onload = () => {
+        ctx.drawImage(img, 0, 0, 800, 400);
+    }
 
-
-// créer une fonction qui prend les images et les dessines aléatoirement sur le canva 
-
-
-
-// on passe une source aléatoirement
-
-
-
-
+}
 
 
 
@@ -79,33 +79,3 @@ function finaleIntroCanva() {
 
 
 
-// var backgroundImage = {
-//     img: img,
-//     x: 0,
-//     speed: -1,
-
-//     move: function () {
-//         this.x += this.speed;
-//         this.x %= canvas.width;
-//     },
-
-//     draw: function () {
-//         ctx.drawImage(this.img, this.x, 0);
-//         if (this.speed < 0) {
-//             ctx.drawImage(this.img, this.x + canvas.width, 0);
-//         } else {
-//             ctx.drawImage(this.img, this.x - this.img.width, 0);
-//         }
-//     },
-// };
-
-// function updateCanvas() {
-//     backgroundImage.move();
-
-//     ctx.clearRect(0, 0, canvas.width, canvas.height);
-//     backgroundImage.draw();
-
-//     requestAnimationFrame(updateCanvas);
-// }
-
-// start calling updateCanvas once the image is loaded

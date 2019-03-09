@@ -5,15 +5,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Ou est charlie</title>
+
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" media="screen" href="./css/game.css">
 
 
+
 </head>
 
 <body>
+
     <div id='container'>
         <div id="title">
             <div id='chrono' class="showAtGame">
@@ -36,9 +41,9 @@
 
 
         <div id="game">
-            <canvas id="introCanvas" width="800" height="400"></canvas>
+            <canvas id="introCanvas" width="800" height="400" class="showAtIntro"></canvas>
             <img id="image" src="" alt="game">
-            <div id="start">START GAME</div>
+            <div id="start" class="showAtIntro">START GAME</div>
         </div>
     </div>
 
@@ -46,11 +51,12 @@
 
 
     <script src="./lib/jquery/jquery-3.3.1.min.js"></script>
-    <script src="./js/audio.js"></script>
+    <script src="./js/sound.js"></script>
     <script src="./js/coordonnees.js"></script>
     <script src="./js/introCanva.js"></script>
     <script src="./js/chrono.js"></script>
-    <script src="./js/chronomain.js"></script>
+    <!-- <script src="./js/chronomain.js"></script> -->
+    <script src="./js/win.js"></script>
 
 
 

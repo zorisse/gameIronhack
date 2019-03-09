@@ -1,7 +1,7 @@
 // créer un timer de 3 minutes 
 // Constructor
-function Chronometer() {
-    this.currentTime = 180;
+function Chronometer(currentTime) {
+    this.currentTime = currentTime;
     this.intervalId = null;
 }
 

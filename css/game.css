@@ -8,7 +8,9 @@
     src: url('./fonts/sketch_3d/Sketch 3D.woff');
   }
   
-
+  audio{
+      display: none;
+  }
 
 
 
@@ -20,7 +22,7 @@
 
 
 #container{
-    border: 3px solid greenyellow;
+    
     /* display: flex;
     flex-direction: column; */
     height: 100vh;
@@ -31,7 +33,7 @@
 #title{
     height: 10vh;
     width: 100%; 
-    border: 1px solid red; 
+
     display: flex;
     flex-direction: column;
     
@@ -59,12 +61,12 @@
     display: none;
     height: 100%;
     width: 100%;
-    border: 3px solid greenyellow;
+    
 }
 
 
 #introCanvas{
-    border: 1px solid red;
+   
 }
 
 #start{

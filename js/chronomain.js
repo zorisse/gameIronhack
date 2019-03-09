@@ -1,4 +1,4 @@
-var chronometer = new Chronometer(180, null);
+// var chronometer = new Chronometer(180, null);
 var minDec = document.getElementById("minDec");
 var minUni = document.getElementById("minUni");
 var secDec = document.getElementById("secDec");
@@ -7,6 +7,7 @@ var secUni = document.getElementById("secUni");
 function printTime() {
     printMinutes();
     printSeconds();
+    player.time = chronometer.currentTime;
 }
 
 function printMinutes() {
@@ -26,7 +27,7 @@ function printSeconds() {
 
 
 
-function setStartBtn() {
+function setStartChrono() {
     // lancer le chrono sur l'instance
     chronometer.minusOneSec();
     setInterval(printTime, 1000);
