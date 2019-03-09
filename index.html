@@ -8,31 +8,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="game.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/game.css">
+
 
 </head>
 
 <body>
     <div id='container'>
         <div id="title">
-            <div id='chrono'>
+            <div id='chrono' class="showAtGame">
                 <span id="minDec" class="number">0</span>
                 <span id="minUni" class="number">0</span><span class="number">:</span>
                 <span id="secDec" class="number">0</span>
                 <span id="secUni" class="number">0</span>
             </div>
-            <div id='waldoDistance'>
-                <P>Distance to Waldo</P>
-                <canvas id='canvas'></canvas>
+            <div id="help" class="button showAtGame">
+                HELP
+            </div>
+            <div id="money" class="button showAtGame">
+                Time+
+            </div>
+            <div id='waldoDistance' class="hidden">
+                <canvas id='canvas' width="1000" height="40"></canvas>
             </div>
 
-            <!-- 
-            <audio id='audio' src="">
-
-            </audio> -->
-
-
         </div>
+
 
         <div id="game">
             <canvas id="introCanvas" width="800" height="400"></canvas>
@@ -45,15 +46,15 @@
 
 
     <script src="./lib/jquery/jquery-3.3.1.min.js"></script>
-    <script src="./audio.js"></script>
-    <script src="./coordonnees.js"></script>
-    <script src="./introCanva.js"></script>
-    <script src="./chrono.js"></script>
-    <script src="./chronomain.js"></script>
+    <script src="./js/audio.js"></script>
+    <script src="./js/coordonnees.js"></script>
+    <script src="./js/introCanva.js"></script>
+    <script src="./js/chrono.js"></script>
+    <script src="./js/chronomain.js"></script>
 
 
 
-    <script src="./game.js"></script>
+    <script src="./js/game.js"></script>
 </body>
 
 </html>

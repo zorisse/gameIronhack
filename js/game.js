@@ -15,9 +15,16 @@ let player = {
     name: 'one ', time: 0, money: 30, gameover: false
 }
 
+// help button
+
+$('#help').click(() => {
+    $('#waldoDistance').toggle();
+    $('#help').toggle('hidden');
+})
 
 // intro
 $('#start').hide();
+$('.showAtGame').hide();
 movingWaldo();
 setTimeout(myStopFunction, 5000);
 setTimeout(finaleIntroCanva, 5001);
@@ -37,7 +44,8 @@ $('#start').click(() => {
     // start the game 
     $('#image').show();
     $('#image').attr('src', image.src)
-    // help 
+    // help and time Show
+    $('.showAtGame').show();
 
     coordonnee(image.x[0], image.y[0])
 
