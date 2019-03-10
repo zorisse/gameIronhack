@@ -1,7 +1,7 @@
 // DATA
 // images 
 const images = [
-    { src: './images/OTfytjA.jpg', x: [270, 295], y: [650, 690] },
+    { src: './images/OTfytjA.jpg', x: [250, 300], y: [680, 730] },
     { src: './images/fort.jpg', x: [230, 240], y: [790, 810] },
     { src: '', x: [275, 287], y: [670, 700] },
     { src: '', x: [275, 287], y: [670, 700] },
@@ -26,9 +26,12 @@ var secDec = document.getElementById("secDec");
 var secUni = document.getElementById("secUni");
 
 function printTime() {
+
     printMinutes();
     printSeconds();
+
     player.time = chronometer.currentTime;
+    console.log(player.time);
 }
 
 function printMinutes() {
@@ -50,14 +53,11 @@ function printSeconds() {
 
 function setStartChrono() {
     // lancer le chrono sur l'instance
+    // lancer le chrono sur l'instance
     chronometer.minusOneSec();
     setInterval(printTime, 1000);
 }
-// setInterval(printMilliseconds, 1);
 
-function setResetBtn() {
-    chronometer.resetClick();
-}
 
 function addTime() {
     chronometer.currentTime += 10
@@ -66,7 +66,18 @@ function addTime() {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
+function checkPlayerGame() {
 
+    if (player.gameover) {
+        console.log("gameOver")
+
+        canvaGameOver();
+        gameOverSound();
+        player.gameover = null
+        setTimeout(() => document.location.reload(true), 10000)
+    }
+
+}
 
 // help button
 
@@ -92,9 +103,7 @@ setTimeout(() => $('#start').show()
 
 const game = (idImage) => {
     // choix de l'image 
-
     let image = images[idImage];
-    setStartChrono();
     $('.showAtIntro').hide();
     // start the game 
     $('#image').show();
@@ -104,23 +113,11 @@ const game = (idImage) => {
     coordonnee(image.x[0], image.y[0])
     $('#money').click(() => addTime());
     // lancer le chrono en fonction du time de player one 
-
-    setInterval(gameOver, 100)
-    setInterval(() => console.log(player.gameover), 1000)
-
-
-
-
-    if (!player.gameover) {
-        // game si click waldo you win  et on passe à une nouvelle image 
-        win(image, () => {
-            player.idImage += 1;
-            console.log("palyer id : " + player.idImage)
-            game(player.idImage);
-        })
-    }
-
-
+    win(image, () => {
+        player.idImage += 1;
+        console.log("palyer id : " + player.idImage)
+        game(player.idImage);
+    })
 
 }
 
@@ -129,7 +126,26 @@ const game = (idImage) => {
 
 
 
+
 // start Button game 
 $('#start').click(() => {
+    setStartChrono();
     game(player.idImage);
+
+    var intervalGameOver = setInterval(
+        () => {
+            if (chronometer.currentTime === 0) {
+                player.gameover = true;
+                checkPlayerGame();
+                clearInterval(intervalGameOver);
+            }
+        },
+
+        1000)
+
+
+
 })
+
+
+

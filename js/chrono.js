@@ -6,9 +6,16 @@ function Chronometer(currentTime) {
 }
 
 Chronometer.prototype.minusOneSec = function () {
-    this.intervalId = setInterval(() => {
-        this.currentTime -= 1;
-    }, 1000);
+    {
+        this.intervalId = setInterval(() => {
+            if (this.currentTime > 0) {
+                this.currentTime -= 1;
+            } else {
+                clearInterval(this.intervalId)
+            }
+
+        }, 1000);
+    }
 };
 
 Chronometer.prototype.setMinutes = function () {
@@ -41,10 +48,7 @@ Chronometer.prototype.stopClick = function () {
 };
 
 Chronometer.prototype.resetClick = function () {
-    this.currentTime = 180;
+    this.currentTime = 0;
 };
 
-  // Chronometer.prototype.splitClick = function () {
-
-  // };
 

@@ -3,11 +3,10 @@
 
 function win(image, successCallback) {
     let xMin = image.x[0]
-    console.log('xmin : =>' + xMin)
     let xMax = image.x[1]
     let yMin = image.y[0]
     let yMax = image.y[1]
-
+    console.log('xmin : =>' + xMin + 'xMAx=>' + xMax)
     document.addEventListener('click', (e) => {
 
         var x = e.screenX;
@@ -26,17 +25,11 @@ function win(image, successCallback) {
 
 
 function gameOver() {
-    if (chronometer.currentTime >= 0) {
-        // chexk game over 
+    if (chronometer.currentTime > 0) {
+        // check game over 
         player.gameover = false;
-
-    } else if (chronometer.currentTime <= 0) {
-        player.gameover = true;
-        canvaGameOver();
-        setTimeout(() => document.location.reload(true), 10000)
-
-    }
-
+    } else
+        console.log(player.gameover)
 }
 
 

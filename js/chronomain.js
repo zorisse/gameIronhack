@@ -5,9 +5,12 @@ var secDec = document.getElementById("secDec");
 var secUni = document.getElementById("secUni");
 
 function printTime() {
+
     printMinutes();
     printSeconds();
     player.time = chronometer.currentTime;
+
+
 }
 
 function printMinutes() {
@@ -30,7 +33,15 @@ function printSeconds() {
 function setStartChrono() {
     // lancer le chrono sur l'instance
     chronometer.minusOneSec();
-    setInterval(printTime, 1000);
+    let intervale2 = setInterval(printTime, 1000);
+
+    if (chronometer.currentTime === 0) {
+        chronometer.stopClick();
+        chronometer.resetClick();
+        clearInterval(intervale2);
+    }
+
+
 }
 // setInterval(printMilliseconds, 1);
 

@@ -19,8 +19,8 @@ function coordonnee(charlieX, charlieY) {
     let screenLog = document.querySelector('#coord');
 
     document.addEventListener('mousemove', (e) => {
-        var x = e.screenX;
-        var y = e.screenY;
+        var x = e.clientX;
+        var y = e.clientY;
         // screenLog.innerText = `Screen X/Y: ${x}, ${y}`;
 
         // Calcul de la distance separant Charli de la souris
