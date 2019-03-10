@@ -1,7 +1,7 @@
 // DATA
 // images 
 const images = [
-    { src: './images/OTfytjA.jpg', x: [250, 300], y: [680, 730] },
+    { src: './images/OTfytjA.jpg', x: [250, 300], y: [650, 730] },
     { src: './images/fort.jpg', x: [230, 240], y: [790, 810] },
     { src: '', x: [275, 287], y: [670, 700] },
     { src: '', x: [275, 287], y: [670, 700] },
@@ -113,7 +113,9 @@ const game = (idImage) => {
     coordonnee(image.x[0], image.y[0])
     $('#money').click(() => addTime());
     // lancer le chrono en fonction du time de player one 
+    timeSound(true);
     win(image, () => {
+        nextSound();
         player.idImage += 1;
         console.log("palyer id : " + player.idImage)
         game(player.idImage);
@@ -135,6 +137,7 @@ $('#start').click(() => {
     var intervalGameOver = setInterval(
         () => {
             if (chronometer.currentTime === 0) {
+                timeSound(false)
                 player.gameover = true;
                 checkPlayerGame();
                 clearInterval(intervalGameOver);
