@@ -21,17 +21,20 @@
     <audio id='audio' src=""></audio>
     <div id='container'>
         <div id="title">
-            <div id='chrono' class="showAtGame">
+            <div id='chrono' class="showAtGame hidden">
                 <span id="minDec" class="number">0</span>
                 <span id="minUni" class="number">0</span><span class="number">:</span>
                 <span id="secDec" class="number">0</span>
                 <span id="secUni" class="number">0</span>
             </div>
-            <div id="help" class="button showAtGame">
+            <div id="help" class="button showAtGame hidden">
                 HELP
             </div>
-            <div id="money" class="button showAtGame">
+            <div id="Time" class="button showAtGame hidden">
                 Time+
+            </div>
+            <div id="Money" class="button showAtGame hidden">
+                <span id='currentMoney'> </span>$
             </div>
             <div id='waldoDistance' class="hidden">
                 <canvas id='canvas' width="1000" height="40"></canvas>
@@ -55,6 +58,7 @@
     <script src="./js/coordonnees.js"></script>
     <script src="./js/introCanva.js"></script>
     <script src="./js/chrono.js"></script>
+    <script src="./js/money.js"></script>
     <script src="./js/win.js"></script>
 
 

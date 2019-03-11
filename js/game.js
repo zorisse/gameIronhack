@@ -60,8 +60,12 @@ function setStartChrono() {
 
 
 function addTime() {
-    chronometer.currentTime += 10
-    player.money -= 10
+    if (player.money > 9) {
+        chronometer.currentTime += 10
+        player.money -= 10
+        showMoney(player.money);
+    }
+
 
 }
 
@@ -78,6 +82,10 @@ function checkPlayerGame() {
     }
 
 }
+
+// Money 
+
+showMoney(player.money);
 
 // help button
 
@@ -111,7 +119,8 @@ const game = (idImage) => {
     // help and time Show
     $('.showAtGame').show();
     coordonnee(image.x[0], image.y[0])
-    $('#money').click(() => addTime());
+
+    $('#Time').click(() => addTime());
     // lancer le chrono en fonction du time de player one 
     timeSound(true);
     win(image, () => {
