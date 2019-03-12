@@ -10,7 +10,7 @@ const images = [
 
 // get money and time 
 let player = {
-    name: 'one ', time: 1000, money: 30, gameover: false, idImage: 0
+    name: 'one ', time: 30, money: 30, gameover: false, idImage: 0
 }
 
 
