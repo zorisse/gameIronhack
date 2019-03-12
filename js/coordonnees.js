@@ -7,7 +7,7 @@ function draw(distance) {
 
     //Je fait varier la couleur en fonction de distance, plus on est près plus on tant vers le rouge 
     ctx.fillStyle = `rgb(${255 - (distance - 30)},0,${0 + (distance - 30)})`
-    ctx.fillRect(0, 0, distance * 3, 40);
+    ctx.fillRect(0, 0, distance * 2, 40);
 }
 
 

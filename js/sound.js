@@ -23,6 +23,7 @@ const timeSound = (gameOver) => {
     if (gameOver) {
         x.setAttribute('src', './sound/chrono.mp3')
         x.autoplay = true;
+        x.loop = true;
         x.load();
     } else if (gameOver === false) {
         x.setAttribute('src', '')

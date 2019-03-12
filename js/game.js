@@ -1,16 +1,16 @@
 // DATA
 // images 
 const images = [
-    { src: './images/OTfytjA.jpg', x: [250, 300], y: [650, 730] },
-    { src: './images/fort.jpg', x: [230, 240], y: [790, 810] },
-    { src: '', x: [275, 287], y: [670, 700] },
-    { src: '', x: [275, 287], y: [670, 700] },
+    { src: './images/waldo.jpg', x: [950, 980], y: [390, 450] },
+    { src: './images/fort.jpg', x: [220, 260], y: [730, 765] },
+    { src: './images/marche.jpg', x: [581, 618], y: [260, 300] },
+    { src: './images/rue.jpg', x: [590, 640], y: [650, 690] },
 
 ]
 
 // get money and time 
 let player = {
-    name: 'one ', time: 10, money: 30, gameover: false, idImage: 0
+    name: 'one ', time: 1000, money: 30, gameover: false, idImage: 0
 }
 
 
@@ -26,24 +26,20 @@ var secDec = document.getElementById("secDec");
 var secUni = document.getElementById("secUni");
 
 function printTime() {
-
     printMinutes();
     printSeconds();
-
     player.time = chronometer.currentTime;
     console.log(player.time);
 }
 
 function printMinutes() {
     var printMin = chronometer.twoDigitsNumber(chronometer.setMinutes());
-
     minUni.innerHTML = printMin[1];
     minDec.innerHTML = printMin[0];
 }
 
 function printSeconds() {
     var printSec = chronometer.twoDigitsNumber(chronometer.setSeconds());
-
     secDec.innerHTML = printSec[0];
     secUni.innerHTML = printSec[1];
 }
@@ -126,6 +122,7 @@ const game = (idImage) => {
     win(image, () => {
         nextSound();
         player.idImage += 1;
+        chronometer.currentTime += 30;
         console.log("palyer id : " + player.idImage)
         game(player.idImage);
     })
